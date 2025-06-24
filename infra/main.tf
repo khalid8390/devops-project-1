@@ -70,11 +70,6 @@ module "hosted_zone" {
   aws_lb_zone_id  = module.alb.aws_lb_zone_id
 }
 
-module "aws_ceritification_manager" {
-  source         = "./certificate-manager"
-  domain_name    = var.domain_name
-  hosted_zone_id = module.hosted_zone.hosted_zone_id
-}
 
 module "rds_db_instance" {
   source               = "./rds"
